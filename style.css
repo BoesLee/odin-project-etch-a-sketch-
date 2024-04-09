@@ -1,0 +1,15 @@
+.bordered {
+    border: 3px double;
+    border-color: black;
+}
+
+.gridBox {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.break {
+    flex-basis: 100%
+}
