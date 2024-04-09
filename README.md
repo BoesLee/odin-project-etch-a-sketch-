@@ -1,4 +1,4 @@
-# Odin Project: Rock Paper Scissors
+# Odin Project: Etch-a-Sketch
 Foundations course
 
 # STEP 2 / 7
