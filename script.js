@@ -1,25 +1,35 @@
-const gridSize = 16;
-let blockSize = (100 / gridSize) -0.1;
+const gridSize = 16; 
+const sketchGrid = document.getElementById("sketchGrid");
+
+let blockSize = (99.9 / gridSize); // not 100% for overflow reasons
 let ratio = window.innerWidth / window.innerHeight
+
+function addSquare() {
+    let square = document.createElement("div");
+    square.style.width = `${blockSize /ratio}vw`;
+    square.style.height = `${blockSize}vh`;
+    square.classList = "square border";
+    sketchGrid.appendChild(square);
+}
 
 function addRow() {
     let row = document.createElement("div");
-    row.classList = "border";
-    row.style.width = `${blockSize /ratio}vw`;
-    row.style.height = `${blockSize}vh`;
-    document.getElementById("grid").appendChild(row);
-}
-
-function addColumn() {
-    let column = document.createElement("div");
-    document.getElementById("grid").appendChild(column);
-    column.style.flexBasis = "100%";
-    grid.insertAdjacentElement("beforeend", column);
+    row.style.flexBasis = "100%";
+    sketchGrid.appendChild(row);
 }
 
 for( let i = 0; i < gridSize; i++) {
     for( let ii = 0; ii < gridSize; ii++) {
-        addRow();
+        addSquare();
     }
-    addColumn();
+    addRow();
 }
+
+let elementsArray = document.querySelectorAll(".square");
+// console.log(elementsArray)
+elementsArray.forEach((element) => element.addEventListener(
+    "mouseover",
+    (event) => {
+        event.target.style.backgroundColor = "black";
+    }
+  ));
