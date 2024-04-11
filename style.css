@@ -20,3 +20,13 @@
     font-size: calc(1rem + 0.5vw);
     font-weight: 900;
 }
+
+.footer {
+    position: fixed;
+    font-size: calc(0.22rem + 0.11vw);
+    background: #eeeeee;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    text-decoration-line: line-through;
+}
