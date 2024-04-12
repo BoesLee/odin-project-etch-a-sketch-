@@ -14,14 +14,21 @@
 </head>
 <body>
     <nav class="navbar navbar-dark bg-dark">
-        <div class="container">
-            <a href="./index.html" id="brand" class="navbar-brand brand">Etch-a-Sketch</a>
-            <button id="sizeButton" class="btn btn-secondary btn-outline-light navbar-text">
-                Select size
+        <div class="container d-flex justify-content-between">
+            <div>
+                <a href="./index.html" id="brand" class="navbar-brand brand">Etch-a-Sketch</a>
+                <div class="form-check form-switch">
+                    <input class="form-check-input" type="checkbox" id="colorSwitch">
+                    <label class="form-check-label switch-text" for="randomizedSwitch">Randomized colors</label>
+                </div>
+            </div>
+            <button id="sizeButton" class="btn btn-secondary btn-outline-light navbarText">
+                Adjust squares
             </button>
         </div>
+
     </nav>
-    <div id="sketchGrid" class="gridBox bordered mb-3">
+    <div id="sketchGrid" class="gridBox m-2 mb-4">
     </div>
     <div class="centered footer p-1">
         Copyright &#169; Lorem, ipsum.

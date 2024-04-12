@@ -3,6 +3,10 @@
     border-color: black;
 }
 
+.gridBorder {
+    border: 0.01px dotted rgba(222, 222, 222, 0.6);
+}
+
 .gridBox {
     display: flex;
     justify-content: center;
@@ -16,7 +20,7 @@
     text-decoration-line: underline;
 }
 
-.navbar-text {
+.navbarText {
     font-size: calc(1rem + 0.5vw);
     font-weight: 900;
 }
@@ -29,4 +33,9 @@
     left: 0;
     right: 0;
     text-decoration-line: line-through;
+}
+
+.switch-text {
+    color:azure;
+    font-size: calc(0.7rem + 0.11vw);
 }
