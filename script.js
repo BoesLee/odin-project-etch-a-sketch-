@@ -1,7 +1,7 @@
 const sketchGrid = document.getElementById("sketchGrid");
 const sizeButton = document.getElementById("sizeButton");
 const colorSwitch = document.getElementById("colorSwitch");
-const darkeningEffect = Math.round((255/10));
+const darkeningEffect = Math.round((255 / 10));
 
 let gridSize = 64;
 
@@ -15,15 +15,13 @@ function getGridSize(){
 }
 
 function addSquare() {
-    let blockSize = (86/ gridSize); // not 100% for "overflow" reasons
+    let blockSize = (86 / gridSize); // not 100% for "overflow" reasons
     let square = document.createElement("div");
     let ratio;
     // counts as "...a new grid should be generated in the same total space as before..."? right? right!
+    // part of an example from https://w3c.github.io/screen-orientation/, with minor change after the '?'
     function getScreenOrientation() {
-        return screen
-          .orientation
-          .type
-          .startsWith("portrait") ? "portrait" : "landscape";
+        return screen.orientation.type.startsWith("portrait") ? "portrait" : "landscape";
       }
     if (getScreenOrientation() == "portrait") {
         ratio = (screen.width / screen.height)
@@ -55,20 +53,16 @@ function drawColor() {
                 const max = 255;
                 // A Proper Random Function, according to https://www.w3schools.com/JS/js_random.asp.
                 let randomNumber = Math.floor(Math.random() * (max - min + 1) ) + min;
-                return randomNumber
+                return randomNumber;
             }
             let color = event.target.style.backgroundColor;
-            console.log(color)
-            let rgb = color.match(/\d+/g);
+            let rgb = color.match(/\d + /g);
             event.target.style.backgroundColor = `rgb(${rgb[0] = randomNumber()}, ${rgb[1] = randomNumber()}, ${rgb[2] = randomNumber()})`;
-            console.log('Checked');
         } 
         else {
             let color = event.target.style.backgroundColor;
-            console.log(color)
-            let rgb = color.match(/\d+/g);
+            let rgb = color.match(/\d + /g);
             event.target.style.backgroundColor = `rgb(${rgb[0] - darkeningEffect}, ${rgb[1] - darkeningEffect}, ${rgb[2] - darkeningEffect})`;
-            console.log('Not checked');
         }
     }));
 }
@@ -80,12 +74,12 @@ function buildGrid() {
         }
         addRow();
     }
-    drawColor()
+    drawColor();
 }
 
 function main() {
     buildGrid(gridSize);
-    colorSwitch.addEventListener('change', drawColor)
-    sizeButton.addEventListener('click', getGridSize)
+    colorSwitch.addEventListener('change', drawColor);
+    sizeButton.addEventListener('click', getGridSize);
 }
 main()
